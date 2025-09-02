@@ -31,7 +31,7 @@ const RootNavbar = () => {
                 )}
 
                 <img src={user?.imageUrl || 'assets/images/david.webp'} alt='user' referrerPolicy='no-referrer' />
-                <span>{user.status}</span>
+                
 
                 <button onClick={handleLogout} className='cursor-pointer'>
                     <img src='/assets/icons/logout.svg' alt='logout' className='size-6 rotate-180' />

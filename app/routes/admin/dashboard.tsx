@@ -60,6 +60,7 @@ export const clientLoader = async () => {
 }
 
 const Dashboard = ({ loaderData } : Route.ComponentProps) => {
+  
   const user = loaderData.user as User | null;
 
   const { dashboardStats, allTrips, userGrowth, tripsByTravelStyle, allUsers } = loaderData;

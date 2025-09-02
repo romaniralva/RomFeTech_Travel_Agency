@@ -45,9 +45,9 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     ])
 
     return {
-        trips: allTrips.map(({ $id, tripDetails, imageUrls }) => ({
+        trips: allTrips.map(({ $id, tripDetail, imageUrls }) => ({
             id: $id,
-            ...parseTripData(tripDetails),
+            ...parseTripData(tripDetail),
             imageUrls: imageUrls ?? []
         })),
         total
@@ -55,6 +55,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 }
 
 const TravelPage = ({ loaderData }: Route.ComponentProps) => {
+
     const trips = loaderData.trips as Trip[] | [];
 
     const [searchParams] = useSearchParams();
@@ -152,7 +153,7 @@ const TravelPage = ({ loaderData }: Route.ComponentProps) => {
 
             <section id="trips" className="py-20 wrapper flex flex-col gap-10">
                 <Header title="Handpicked Trips" description="Browse well-planned trips designes for your travel style" />
-
+                
                 <div className="trip-grid">
                     {trips.map((trip) => (
                         <TripCard
@@ -184,7 +185,7 @@ const TravelPage = ({ loaderData }: Route.ComponentProps) => {
                             alt="logo"
                             className="size-[30px]"
                         />
-                        <h1>Tourvisto</h1>
+                        <h1>FetotTours</h1>
                     </Link>
 
                     <div>
